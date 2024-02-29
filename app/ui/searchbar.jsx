@@ -1,10 +1,34 @@
-import styles from './styles/search.module.css'
+'use client'
+import styles from "./styles/search.module.css";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useDebouncedCallback } from 'use-debounce';
 
-const Search = () => {
+const TYPING_DELAY = 500;
+
+const Search = ({results}) => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const handleSearch = useDebouncedCallback((search) => {
+    const params = new URLSearchParams(searchParams);
+    if (search) {
+      params.set("query", search);
+    } else {
+      params.delete("query");
+    }
+    replace(`${pathname}?${params.toString()}`);
+  }, TYPING_DELAY);
+
   return (
     <div className={styles.searchContainer}>
       <div className={styles.searchBox}>
-        <input type="text" placeholder="Buscar un personaje..." />
+        <input
+          onChange={(e) => handleSearch(e.target.value)}
+          defaultValue={searchParams.get("query")?.toString()}
+          type="text"
+          placeholder="Buscar un personaje..."
+        />
         <svg
           width="16"
           height="16"
@@ -19,7 +43,7 @@ const Search = () => {
         </svg>
       </div>
 
-      <p>50 resultados</p>
+      <p>{results} resultados</p>
     </div>
   );
 };

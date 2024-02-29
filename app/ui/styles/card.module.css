@@ -10,12 +10,20 @@
   position: absolute;
   transition: all 300ms;
 }
+
+.cardImage{
+  width: 100%;
+  height: 190px;
+  position: relative;
+}
+
 .cardInfo {
   background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  min-height: 80px;
   color: white;
   text-transform: uppercase;
   border-bottom-right-radius: 10px;
@@ -36,5 +44,11 @@
 .cardContainer:hover {
   .cardDetail {
     height: 100%;
+  }
+}
+
+@media (width < 500px){
+  .cardContainer{
+    width: 180px;
   }
 }

@@ -1,4 +1,5 @@
 import { Heart } from "./icons/heart";
+
 const Favorite = ({ likes = 0 }) => {
   return (
     <div style={{display: 'flex', alignItems: 'center',gap:'4px', cursor:'pointer'}}>

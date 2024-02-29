@@ -1,5 +1,5 @@
 .characterContainer{
-    height: 320px;
+    min-height: 320px;
     width: 100%;
     background-color: black;
     color: white;
@@ -48,4 +48,22 @@
     gap: 24px;
     width: fit-content;
     padding: 24px 0
+}
+
+@media (width < 500px){
+    .characterInfo{
+        flex-direction: column;
+    }
+    .characterImage{
+        width: 100%;
+        height: 400px;
+    }
+    .characterText{
+        width: 100%;
+        padding: 48px 24px;
+
+    }
+    .comicsContainer{
+        padding: 0px 16px;
+    }
 }

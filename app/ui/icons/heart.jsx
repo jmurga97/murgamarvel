@@ -1,5 +1,5 @@
 'use client'
-export const Heart = ({isLiked = false, size = '30', fill = 'transparent', onClick}) => {
+export const Heart = ({isLiked = false, size = '30', fill = 'transparent', onClick = () => {}}) => {
 
   return (
     <svg
