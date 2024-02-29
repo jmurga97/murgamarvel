@@ -1,4 +1,4 @@
-import styles from "@/app/ui/styles/character.module.css";
+import styles from "../ui/styles/character.module.css";
 import Image from "next/image";
 import { Heart } from "../ui/icons/heart";
 import TriangleBorderBottom from "../ui/icons/triangleborderbottom";
