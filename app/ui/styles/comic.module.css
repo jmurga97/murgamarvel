@@ -1,0 +1,16 @@
+.comic{
+    height: 340px;
+    width: 180px;
+}
+.comicInfo{
+    height: 100%;
+    width: 100%;
+}
+.comicTitle{
+    font-size: 16px;
+    font-weight: 900;
+    margin: 8px 0 4px 0;
+}
+.comicInfo p{
+    font-size: 12px;
+}

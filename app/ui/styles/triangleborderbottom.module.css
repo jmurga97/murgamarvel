@@ -1,0 +1,11 @@
+.borderBottom {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: absolute;
+    bottom: -10px;
+    right: -14px;
+    transform: rotate(-45deg);
+    border-top: 20px solid white;
+  }

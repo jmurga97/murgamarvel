@@ -1,0 +1,51 @@
+.characterContainer{
+    height: 320px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.characterInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.characterImage{
+    width: 320px;
+    height: 320px;
+    position: relative;
+}
+
+.characterText{
+    display: flex;
+    flex-direction: column;
+    padding: 24px 48px;
+    width: 640px;
+}
+
+.characterTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.comicsContainer{
+    max-width: 960px;
+    margin: 0 auto;
+    padding-bottom: 54px;
+}
+
+.comics{
+    overflow-x: auto;
+    scrollbar-color: #ec1d24 #f1f1f1;
+    scrollbar-width: thin;
+}
+.comicsList{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: fit-content;
+    padding: 24px 0
+}
