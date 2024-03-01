@@ -1,6 +1,6 @@
 # Murga Marvel App
 Puedes revisar un preview del deploy de esta App en el siguiente link
-[text](https://murgamarvel.vercel.app/)
+[https://murgamarvel.vercel.app/](https://murgamarvel.vercel.app/)
 
 Consiste en una pequeña app que obtiene información de la Marvel API (https://gateway.marvel.com/v1/public/characters). Cuenta con un buscador para filtrar los personajes previamente recuperados de la API, una página para consultar los favoritos y una página de detalle con información básica del heroe y sus respectivos primeros 20 comics.
 
@@ -52,7 +52,7 @@ main/
  y
 ## API-REST
 
-- URL Base: [text](https://gateway.marvel.com/v1/public/characters)
+- URL Base: [https://gateway.marvel.com/v1/public/characters](https://gateway.marvel.com/v1/public/characters)
 
 ## Descripción de Vistas
 
@@ -69,8 +69,8 @@ main/
 
 ## Tecnologías Utilizadas
 
-- **React**: Versión 17 o superior.
-- **Node**: Versión 18 o superior.
+- **React**: Versión 18.
+- **NextJS**: Versión 14.1
 - **CSS**: Estilos personalizados utilizando CSS y CSS Modules (NextJS).
 - **Gestión del Estado**: ContextAPI de React para la gestión del estado.
 - **Pruebas**: Implementación de pruebas utilizando Jest.

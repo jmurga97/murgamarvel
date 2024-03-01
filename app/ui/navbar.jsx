@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Favorite from "./favorite";
+import Favorite from "./icons/favoriteCount";
 import styles from "./styles/navbar.module.css";
 import Link from "next/link";
 import { useAppContext } from "../context";

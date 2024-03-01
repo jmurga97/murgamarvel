@@ -11,7 +11,7 @@ export async function getCharacters() {
       ts: 1,
       apikey: publicKey,
       hash: hash.toString(),
-      limit: 10,
+      limit: 50,
       orderBy: "name",
     });
     const response = await fetch(
@@ -35,10 +35,7 @@ export async function getCharacterById(id) {
     if (id) {
       const response = await fetch(`${MARVEL_URI}/${id}?${params}`);
       const jsonResponse = await response.json();
-      if (!jsonResponse || !jsonResponse.data || !jsonResponse.data.results) {
-        throw new Error("No valid results from api");
-      }
-      return jsonResponse.data.results;
+      return jsonResponse.data
     } else {
       throw new Error("No ID provided");
     }
@@ -53,16 +50,12 @@ export async function getComicsOfCharacterById(id) {
       ts: 1,
       apikey: publicKey,
       hash: hash.toString(),
-      limit: 5,
+      limit: 20,
       orderBy: "onsaleDate",
     });
     if (id) {
       const response = await fetch(`${MARVEL_URI}/${id}/comics?${params}`);
       const jsonResponse = await response.json();
-
-      if (!jsonResponse || !jsonResponse.data || !jsonResponse.data.results) {
-        throw new Error("No valid results from api");
-      }
       return jsonResponse.data.results;
     } else {
       throw new Error("No ID provided");

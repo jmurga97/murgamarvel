@@ -1,4 +1,4 @@
-import { Heart } from "./icons/heart";
+import { Heart } from "./heart";
 
 const Favorite = ({ likes = 0 }) => {
   return (

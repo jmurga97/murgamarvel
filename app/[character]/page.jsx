@@ -1,15 +1,13 @@
 import styles from "../ui/styles/character.module.css";
-import Image from "next/image";
-import { Heart } from "../ui/icons/heart";
-import TriangleBorderBottom from "../ui/icons/triangleborderbottom";
 import Comic from "../ui/character/comic";
 import {
   getCharacterById,
   getCharacters,
   getComicsOfCharacterById,
 } from "../lib/data";
-import { useOnSetLikes } from "../lib/hooks/useOnSetLikes";
 import Info from '../ui/character/info'
+import { notFound } from 'next/navigation';
+
 //De esta manera generamos 50 páginas estáticas para los primeros 50 heroes retornados de la MARVEL API, ordenados por nombre
 //si se accede a la ruta /[character] con un id distinto a estos primeros 50 heros habrá un error 404
 export async function generateStaticParams() {
@@ -21,10 +19,13 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
-  const [character] = await getCharacterById(
+  const data = await getCharacterById(
     params.character
   );
-  const {id, name, thumbnail, description } = character
+  if (!data) {
+    notFound();
+  }
+  const {id, name, thumbnail, description } = data.results[0]
   const img = `${thumbnail.path}.${thumbnail.extension}`
   //const {isLiked, onSetLike} = useOnSetLikes(id,name,img)
   const comics = await getComicsOfCharacterById(params.character);

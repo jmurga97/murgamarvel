@@ -3,7 +3,7 @@ import styles from "./styles/search.module.css";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useDebouncedCallback } from 'use-debounce';
 
-const TYPING_DELAY = 500;
+const TYPING_DELAY = 400;
 
 const Search = ({results}) => {
   const searchParams = useSearchParams();
